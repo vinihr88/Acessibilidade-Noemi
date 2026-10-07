@@ -1,0 +1,403 @@
+/*
+ * Painel de Acessibilidade Web - estilos
+ * --------------------------------------------------------------
+ * Parte 1: aparência do painel (tudo dentro de #a11y-root).
+ * Parte 2: efeitos dos recursos, ativados por classes no <html>.
+ *
+ * Os efeitos usam o seletor "body > :not(#a11y-root)" para atingir
+ * o conteúdo do site sem alterar o próprio painel.
+ * O painel usa px de propósito: ele não cresce junto com o texto do
+ * site, então continua cabendo na tela em 200%.
+ */
+
+/* =========================================================
+   PARTE 1 - PAINEL
+   ========================================================= */
+
+#a11y-root {
+  --a11y-primaria: #1a3fb8;
+  --a11y-primaria-escura: #0f2a80;
+  --a11y-texto: #111827;
+  --a11y-suave: #4b5563;
+  --a11y-fundo: #ffffff;
+  --a11y-fundo-cartao: #f3f4f6;
+  --a11y-borda: #d1d5db;
+  --a11y-foco: #ffbf00;
+}
+
+#a11y-root,
+#a11y-root * {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+/* Botão flutuante */
+#a11y-root .a11y-botao {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483646;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--a11y-primaria);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+#a11y-root .a11y-botao:hover {
+  background: var(--a11y-primaria-escura);
+}
+
+/* Foco sempre visível (WCAG 2.4.7) */
+#a11y-root button:focus-visible {
+  outline: 3px solid var(--a11y-foco);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #000;
+}
+
+/* Janela do painel */
+#a11y-root .a11y-painel {
+  position: fixed;
+  right: 20px;
+  bottom: 92px;
+  z-index: 2147483647;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 112px);
+  overflow-y: auto;
+  background: var(--a11y-fundo);
+  color: var(--a11y-texto);
+  border: 2px solid var(--a11y-texto);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+}
+
+#a11y-root .a11y-painel[hidden] {
+  display: none;
+}
+
+#a11y-root .a11y-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--a11y-primaria);
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+}
+
+#a11y-root .a11y-cabecalho h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#a11y-root .a11y-fechar {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#a11y-root .a11y-fechar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#a11y-root .a11y-corpo {
+  padding: 16px;
+}
+
+/* Controle de tamanho do texto */
+#a11y-root .a11y-fonte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: var(--a11y-fundo-cartao);
+  border: 1px solid var(--a11y-borda);
+  border-radius: 10px;
+}
+
+#a11y-root .a11y-rotulo {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#a11y-root .a11y-fonte-controles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#a11y-root .a11y-fonte-controles button {
+  min-width: 44px;
+  height: 44px;
+  border: 2px solid var(--a11y-primaria);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--a11y-primaria);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#a11y-root .a11y-fonte-controles button:hover:not(:disabled) {
+  background: var(--a11y-primaria);
+  color: #fff;
+}
+
+#a11y-root .a11y-fonte-controles button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#a11y-root output {
+  min-width: 52px;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cartões liga/desliga */
+#a11y-root .a11y-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+#a11y-root .a11y-cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 96px;
+  padding: 10px 6px;
+  border: 2px solid var(--a11y-borda);
+  border-radius: 10px;
+  background: var(--a11y-fundo-cartao);
+  color: var(--a11y-texto);
+  cursor: pointer;
+  text-align: center;
+}
+
+#a11y-root .a11y-cartao:hover:not(:disabled) {
+  border-color: var(--a11y-primaria);
+}
+
+#a11y-root .a11y-cartao[aria-pressed="true"] {
+  background: var(--a11y-primaria);
+  border-color: var(--a11y-primaria-escura);
+  color: #fff;
+}
+
+#a11y-root .a11y-cartao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#a11y-root .a11y-icone {
+  font-size: 24px;
+  line-height: 1;
+}
+
+#a11y-root .a11y-nome {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Estado em texto, não só por cor (WCAG 1.4.1) */
+#a11y-root .a11y-estado {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+#a11y-root .a11y-cartao[aria-pressed="true"] .a11y-estado::before {
+  content: "✓ ";
+}
+
+#a11y-root .a11y-redefinir {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 2px solid #b91c1c;
+  border-radius: 10px;
+  background: #fff;
+  color: #b91c1c;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#a11y-root .a11y-redefinir:hover {
+  background: #b91c1c;
+  color: #fff;
+}
+
+#a11y-root .a11y-dica {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--a11y-suave);
+  text-align: center;
+}
+
+#a11y-root kbd {
+  padding: 1px 5px;
+  border: 1px solid var(--a11y-borda);
+  border-radius: 4px;
+  background: var(--a11y-fundo-cartao);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+}
+
+/* Região de anúncios: invisível na tela, lida por leitores de tela */
+#a11y-root .a11y-anuncio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  #a11y-root .a11y-botao { right: 12px; bottom: 12px; }
+  #a11y-root .a11y-painel { right: 16px; bottom: 84px; }
+}
+
+/* =========================================================
+   PARTE 2 - EFEITOS DOS RECURSOS NO SITE
+   ========================================================= */
+
+/* 2. Alto contraste: fundo preto, texto branco, links amarelos */
+html.a11y-contraste,
+html.a11y-contraste body {
+  background: #000 !important;
+}
+
+html.a11y-contraste body > :not(#a11y-root),
+html.a11y-contraste body > :not(#a11y-root) * {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+html.a11y-contraste body > :not(#a11y-root) a,
+html.a11y-contraste body > :not(#a11y-root) a * {
+  color: #ffff00 !important;
+}
+
+html.a11y-contraste body > :not(#a11y-root) button,
+html.a11y-contraste body > :not(#a11y-root) input,
+html.a11y-contraste body > :not(#a11y-root) select,
+html.a11y-contraste body > :not(#a11y-root) textarea {
+  border: 2px solid #fff !important;
+}
+
+html.a11y-contraste body > :not(#a11y-root) svg [fill]:not([fill="none"]) {
+  fill: #fff !important;
+}
+
+html.a11y-contraste body > :not(#a11y-root) svg [stroke]:not([stroke="none"]) {
+  stroke: #fff !important;
+}
+
+/* 3. Fonte legível: Atkinson Hyperlegible (Braille Institute), com alternativas */
+html.a11y-fonte-legivel body > :not(#a11y-root),
+html.a11y-fonte-legivel body > :not(#a11y-root) * {
+  font-family: "Atkinson Hyperlegible", Verdana, Tahoma, Arial, sans-serif !important;
+  font-style: normal !important;
+}
+
+/* 4. Espaçamento do texto: valores do critério WCAG 1.4.12 */
+html.a11y-espacamento body > :not(#a11y-root) * {
+  line-height: 1.5 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+html.a11y-espacamento body > :not(#a11y-root) p {
+  margin-bottom: 2em !important;
+}
+
+/* 5. Destacar links: sublinhado, fundo e contorno, sem depender de cor */
+html.a11y-links body > :not(#a11y-root) a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  background-color: #ffeb3b !important;
+  color: #000 !important;
+  outline: 2px solid #000 !important;
+  outline-offset: 1px;
+  font-weight: 700 !important;
+}
+
+/* Elementos dentro do link herdam o destaque (evita texto preto em
+   fundo preto quando o alto contraste também está ligado) */
+html.a11y-links body > :not(#a11y-root) a * {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+
+/* 6. Guia de leitura: faixa que acompanha o ponteiro */
+#a11y-root .a11y-guia {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 2147483645;
+  pointer-events: none;
+  background: rgba(255, 221, 0, 0.18);
+  border-top: 3px solid #1a3fb8;
+  border-bottom: 3px solid #1a3fb8;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.35);
+}
+
+html.a11y-guia-ativa #a11y-root .a11y-guia {
+  display: block;
+}
+
+/* 7. Leitura em voz alta: mostra o que pode ser lido */
+html.a11y-leitura body > :not(#a11y-root) :is(p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption, td, th, dt, dd, label, summary):hover {
+  outline: 2px dashed #1a3fb8 !important;
+  outline-offset: 2px;
+  cursor: pointer !important;
+}
+
+html.a11y-contraste.a11y-leitura body > :not(#a11y-root) :is(p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption, td, th, dt, dd, label, summary):hover {
+  outline-color: #ffff00 !important;
+}
+
+/* 8. Pausar animações: remove animações, transições e rolagem suave */
+html.a11y-sem-animacao,
+html.a11y-sem-animacao *,
+html.a11y-sem-animacao *::before,
+html.a11y-sem-animacao *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}

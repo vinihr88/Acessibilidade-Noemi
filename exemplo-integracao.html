@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de integração do painel</title>
+  <style>
+    body { font-family: Georgia, serif; font-size: 1.1rem; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
+    a { color: #7a2e8a; text-decoration: none; }
+  </style>
+
+  <!-- Integração: só estas duas linhas -->
+  <link rel="stylesheet" href="painel/acessibilidade.css">
+  <script src="painel/acessibilidade.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Página qualquer</h1>
+    <p>
+      Esta página não tem nenhuma relação com o site principal. Ela existe para mostrar que o
+      painel funciona em outro site apenas incluindo o CSS e o JavaScript.
+    </p>
+    <p>
+      Repare que este <a href="index.html">link sem sublinhado</a> fica difícil de identificar
+      para quem não distingue cores. Ative "Destacar links" no painel para ver a diferença.
+    </p>
+  </main>
+</body>
+</html>

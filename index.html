@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acessibilidade para Todos: o que é acessibilidade digital, quem ela beneficia e como um painel de acessibilidade ajuda na navegação.">
+  <title>Acessibilidade para Todos</title>
+
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- Painel de Acessibilidade: integração = estas duas linhas -->
+  <link rel="stylesheet" href="painel/acessibilidade.css">
+  <script src="painel/acessibilidade.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo-interno">
+      <a class="marca" href="#inicio" aria-label="Acessibilidade para Todos, início">
+        <span class="marca-icone" aria-hidden="true">♿</span>
+        <span>Acessibilidade <strong>para Todos</strong></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#o-que-e">O que é</a></li>
+          <li><a href="#quem">Para quem</a></li>
+          <li><a href="#principios">Princípios</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero-interno">
+        <div class="hero-texto">
+          <p class="etiqueta">Inclusão digital</p>
+          <h1 id="hero-titulo">A internet é de todo mundo. O acesso também precisa ser.</h1>
+          <p class="hero-sub">
+            Acessibilidade digital é garantir que qualquer pessoa consiga perceber, entender,
+            navegar e interagir com um site, independente de deficiência, idade ou dispositivo.
+          </p>
+          <div class="hero-acoes">
+            <a class="botao" href="#recursos">Conhecer os recursos</a>
+            <button type="button" class="botao botao-contorno" id="abrir-painel">Abrir o painel</button>
+          </div>
+        </div>
+        <div class="hero-arte" aria-hidden="true">
+          <span class="bolha b1">👁️</span>
+          <span class="bolha b2">👂</span>
+          <span class="bolha b3">🖐️</span>
+          <span class="bolha b4">🧠</span>
+          <span class="bolha b5">♿</span>
+        </div>
+      </div>
+
+      <div class="faixa" aria-label="Destaques">
+        <div class="faixa-trilho">
+          <span>18,6 milhões de brasileiros com deficiência</span>
+          <span aria-hidden="true">•</span>
+          <span>Lei Brasileira de Inclusão (13.146/2015)</span>
+          <span aria-hidden="true">•</span>
+          <span>WCAG 2.2: diretrizes internacionais</span>
+          <span aria-hidden="true">•</span>
+          <span>Acessibilidade beneficia todos</span>
+          <span aria-hidden="true">•</span>
+          <span>18,6 milhões de brasileiros com deficiência</span>
+          <span aria-hidden="true">•</span>
+          <span>Lei Brasileira de Inclusão (13.146/2015)</span>
+          <span aria-hidden="true">•</span>
+          <span>WCAG 2.2: diretrizes internacionais</span>
+          <span aria-hidden="true">•</span>
+          <span>Acessibilidade beneficia todos</span>
+          <span aria-hidden="true">•</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-que-e" class="secao" aria-labelledby="o-que-e-titulo">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="o-que-e-titulo">O que é acessibilidade digital?</h2>
+          <p>
+            É a prática de construir sites, aplicativos e documentos que possam ser usados por todas as
+            pessoas. Isso inclui quem usa <strong>leitor de tela</strong>, quem navega <strong>só pelo
+            teclado</strong>, quem tem <strong>baixa visão</strong>, <strong>daltonismo</strong>,
+            <strong>dislexia</strong>, <strong>TDAH</strong> ou sensibilidade a movimento.
+          </p>
+          <p>
+            No Brasil, a <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm">Lei
+            Brasileira de Inclusão (Lei nº 13.146/2015)</a>, em seu artigo 63, torna obrigatória a
+            acessibilidade nos sites mantidos por empresas e pelo governo.
+          </p>
+          <p>
+            A referência técnica mais usada no mundo são as
+            <a href="https://www.w3.org/TR/WCAG22/">Diretrizes de Acessibilidade para Conteúdo Web (WCAG)</a>,
+            publicadas pelo W3C.
+          </p>
+        </div>
+        <aside class="destaque" aria-labelledby="numero-titulo">
+          <h3 id="numero-titulo">Em números</h3>
+          <dl class="numeros">
+            <div>
+              <dt>18,6 milhões</dt>
+              <dd>de pessoas com deficiência no Brasil (8,9% da população com 2 anos ou mais), segundo a PNAD Contínua 2022 do IBGE.</dd>
+            </div>
+            <div>
+              <dt>1,3 bilhão</dt>
+              <dd>de pessoas no mundo vivem com alguma deficiência significativa, segundo a OMS (2023).</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="quem" class="secao secao-alt" aria-labelledby="quem-titulo">
+      <div class="container">
+        <h2 id="quem-titulo">Para quem a acessibilidade faz diferença?</h2>
+        <p class="intro">Para todo mundo. Mas algumas pessoas dependem dela para conseguir usar a web.</p>
+        <ul class="cartoes">
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">👁️</span>
+            <h3>Deficiência visual</h3>
+            <p>Cegueira, baixa visão e daltonismo. Precisam de contraste, texto ampliável e compatibilidade com leitores de tela.</p>
+          </li>
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">👂</span>
+            <h3>Deficiência auditiva</h3>
+            <p>Surdez e perda auditiva. Precisam de legendas, transcrições e conteúdo em Libras.</p>
+          </li>
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">🖐️</span>
+            <h3>Deficiência motora</h3>
+            <p>Dificuldade para usar o mouse. Precisam de navegação completa pelo teclado e áreas de clique grandes.</p>
+          </li>
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">🧠</span>
+            <h3>Neurodivergência e cognição</h3>
+            <p>Dislexia, TDAH, autismo. Beneficiam-se de fontes legíveis, espaçamento e menos distrações.</p>
+          </li>
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">👵</span>
+            <h3>Pessoas idosas</h3>
+            <p>A visão e a coordenação mudam com a idade. Texto maior e contraste ajudam muito.</p>
+          </li>
+          <li class="cartao">
+            <span class="cartao-icone" aria-hidden="true">☀️</span>
+            <h3>Limitações temporárias</h3>
+            <p>Braço quebrado, sol forte na tela, ambiente barulhento. Qualquer pessoa pode precisar.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="principios" class="secao" aria-labelledby="principios-titulo">
+      <div class="container">
+        <h2 id="principios-titulo">Os 4 princípios da WCAG</h2>
+        <p class="intro">Todo conteúdo acessível precisa ser:</p>
+        <ol class="principios">
+          <li>
+            <h3><span class="letra" aria-hidden="true">P</span> Perceptível</h3>
+            <p>A informação precisa chegar aos sentidos do usuário: texto alternativo em imagens, legendas e contraste suficiente.</p>
+          </li>
+          <li>
+            <h3><span class="letra" aria-hidden="true">O</span> Operável</h3>
+            <p>Tudo deve funcionar pelo teclado, sem limite de tempo apertado e sem conteúdo que pisque.</p>
+          </li>
+          <li>
+            <h3><span class="letra" aria-hidden="true">C</span> Compreensível</h3>
+            <p>Linguagem clara, comportamento previsível e ajuda para corrigir erros em formulários.</p>
+          </li>
+          <li>
+            <h3><span class="letra" aria-hidden="true">R</span> Robusto</h3>
+            <p>Código correto e semântico, que funcione em navegadores e tecnologias assistivas diferentes.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="recursos" class="secao secao-alt" aria-labelledby="recursos-titulo">
+      <div class="container">
+        <h2 id="recursos-titulo">Os 8 recursos do nosso painel</h2>
+        <p class="intro">
+          Clique no botão azul no canto inferior direito (ou pressione <kbd>Alt</kbd> + <kbd>A</kbd>)
+          e experimente cada recurso nesta página.
+        </p>
+        <div class="tabela-rolagem" tabindex="0" role="region" aria-labelledby="tabela-legenda">
+          <table class="tabela">
+            <caption id="tabela-legenda">Recursos do painel, quem ajudam e critério WCAG relacionado</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Recurso</th>
+                <th scope="col">O que faz</th>
+                <th scope="col">Quem ajuda</th>
+                <th scope="col">WCAG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <th scope="row">Tamanho do texto</th>
+                <td>Aumenta ou diminui o texto de 80% a 200%.</td>
+                <td>Baixa visão, pessoas idosas</td>
+                <td>1.4.4</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <th scope="row">Alto contraste</th>
+                <td>Fundo preto, texto branco e links amarelos.</td>
+                <td>Baixa visão, daltonismo, fotossensibilidade</td>
+                <td>1.4.3 / 1.4.6</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <th scope="row">Fonte legível</th>
+                <td>Troca a fonte pela Atkinson Hyperlegible.</td>
+                <td>Dislexia, baixa visão</td>
+                <td>1.4.8</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <th scope="row">Espaçamento do texto</th>
+                <td>Aumenta espaço entre linhas, letras, palavras e parágrafos.</td>
+                <td>Dislexia, baixa visão</td>
+                <td>1.4.12</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <th scope="row">Destacar links</th>
+                <td>Sublinha e marca todos os links com fundo amarelo.</td>
+                <td>Daltonismo, deficiência cognitiva</td>
+                <td>1.4.1</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <th scope="row">Guia de leitura</th>
+                <td>Faixa que acompanha o mouse e escurece o restante.</td>
+                <td>TDAH, dislexia</td>
+                <td>Boa prática</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <th scope="row">Leitura em voz alta</th>
+                <td>Lê em voz alta o texto clicado ou selecionado.</td>
+                <td>Baixa visão, dislexia, baixa alfabetização</td>
+                <td>Boa prática</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <th scope="row">Pausar animações</th>
+                <td>Para animações, transições e vídeos automáticos.</td>
+                <td>Epilepsia, distúrbio vestibular, TDAH</td>
+                <td>2.2.2 / 2.3.3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="dicas" class="secao" aria-labelledby="dicas-titulo">
+      <div class="container duas-colunas">
+        <div>
+          <h2 id="dicas-titulo">Dicas para criar sites acessíveis</h2>
+          <ul class="lista-check">
+            <li>Use HTML semântico: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;button&gt;</code>.</li>
+            <li>Escreva texto alternativo (<code>alt</code>) em toda imagem com significado.</li>
+            <li>Garanta contraste mínimo de 4,5:1 entre texto e fundo.</li>
+            <li>Teste a navegação usando só a tecla <kbd>Tab</kbd>.</li>
+            <li>Nunca use só a cor para passar uma informação.</li>
+            <li>Mantenha o foco do teclado sempre visível.</li>
+            <li>Associe cada campo de formulário a um <code>&lt;label&gt;</code>.</li>
+            <li>Use unidades relativas (<code>rem</code>, <code>em</code>) para o texto poder crescer.</li>
+          </ul>
+        </div>
+        <form class="formulario" aria-labelledby="form-titulo" onsubmit="event.preventDefault(); document.getElementById('form-msg').textContent = 'Obrigado! Sua sugestão foi registrada (demonstração).';">
+          <h3 id="form-titulo">Envie uma sugestão</h3>
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required>
+          <label for="sugestao">Sugestão de recurso</label>
+          <textarea id="sugestao" name="sugestao" rows="4" required></textarea>
+          <button type="submit" class="botao">Enviar</button>
+          <p id="form-msg" role="status" class="form-msg"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Acessibilidade para Todos · Projeto escolar de desenvolvimento web · SENAI · 2026</p>
+      <p>Referências: <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a> · <a href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/modelo-de-acessibilidade">eMAG</a> · <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm">Lei 13.146/2015</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Botão do hero que abre o painel usando a API pública do componente
+    document.getElementById('abrir-painel').addEventListener('click', function (e) {
+      e.stopPropagation();
+      window.PainelAcessibilidade.abrir();
+    });
+  </script>
+</body>
+</html>
